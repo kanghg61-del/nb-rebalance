@@ -284,10 +284,10 @@ export function ScenarioMatrix({ scenarioKey, allowSlider, descBorderColor }: { 
               <th rowSpan={2} style={th(46, 'right')}>주판</th>
               <th rowSpan={2} style={th(46, 'right')}>출고</th>
               <th rowSpan={2} style={th(68, 'right')}>반응과 재고</th>
-              <th colSpan={5} style={thG(CLR.blue)}>현 재고보유주수</th>
-              <th colSpan={5} style={thG(CLR.green)}>이동수량 (장)</th>
-              <th colSpan={5} style={thG(CLR.orange)}>이동 후 재고보유주수</th>
-              <th colSpan={5} style={thG(CLR.purple)}>이동 후 재고량 (장,±)</th>
+              <th colSpan={CHANNELS.length} style={thG(CLR.blue)}>현 재고보유주수</th>
+              <th colSpan={CHANNELS.length} style={thG(CLR.green)}>이동수량 (장)</th>
+              <th colSpan={CHANNELS.length} style={thG(CLR.orange)}>이동 후 재고보유주수</th>
+              <th colSpan={CHANNELS.length} style={thG(CLR.purple)}>이동 후 재고량 (장,±)</th>
               <th rowSpan={2} style={th(76, 'right')}>효과 (만원)</th>
             </tr>
             <tr>
@@ -303,7 +303,7 @@ export function ScenarioMatrix({ scenarioKey, allowSlider, descBorderColor }: { 
                 <td style={{ ...td(), position: 'sticky', left: 0, background: CLR.sum_bg, zIndex: 2 }}></td>
                 <td style={{ ...td(), color: CLR.sum_fg, fontWeight: 700, position: 'sticky', left: 28, background: CLR.sum_bg, zIndex: 2 }}>Σ 합계</td>
                 <td style={{ ...td(), color: CLR.sum_fg, fontWeight: 700, position: 'sticky', left: 122, background: CLR.sum_bg, zIndex: 2 }}>{filtered.length.toLocaleString()}건</td>
-                <td colSpan={5} style={td()}></td>
+                <td colSpan={CHANNELS.length} style={td()}></td>
                 {CHANNELS.map(c => <td key={'wa'+c} style={td('right')}></td>)}
                 {CHANNELS.map(c => {
                   const sum = displayRows.reduce((s, r) => s + (r.moves[c] ?? 0), 0);
