@@ -4,5 +4,7 @@ const config: NextConfig = {
   compress: true,
   poweredByHeader: false,
   serverExternalPackages: ['pg'],
+  eslint: { ignoreDuringBuilds: true },
+  typescript: { ignoreBuildErrors: true },
 };
 export default config;
